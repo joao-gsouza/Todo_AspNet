@@ -1,0 +1,36 @@
+﻿@model List<Todo_id.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+    <h1 class="display-4">Tarefas</h1>
+    <br>
+    @if(Model.Count() != 0){
+     <p><a asp-controller="Tarefa" asp-action="adicionarTarefa">Adicionar Tarefa </a></p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>| Descrição da atividade | </th>
+                    <th>| Status | </th>
+                    <th colspan="2">| Gerenciamento da atividade |</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {   
+                    <tr>
+                        <td>@item.Nome</td>
+                        <td>@{var status = item.Status ? "concluido" : "nao concluido";}<a asp-controller="Tarefa" asp-action="StatusTarefa" asp-route-id="@item.Id">@status</a> </td>
+                        <td><a asp-controller="Tarefa" asp-action="EditarTarefa" asp-route-id="@item.Id">Editar</a></td>
+                        <td><a asp-controller="Tarefa" asp-action="RemoverTarefa" asp-route-id="@item.Id">Deletar</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }else{
+        <p>Nao ha tarefas registradas, clique em adicionar tarefas</p>
+    }
+</div>

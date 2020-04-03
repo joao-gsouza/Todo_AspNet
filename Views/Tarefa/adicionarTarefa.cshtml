@@ -1,0 +1,24 @@
+@model Todo_id.Models.Tarefa
+
+
+<div class="row">
+    <div class="col-md-4">
+       <strong >
+           <form asp-controller="Tarefa" asp-action="adicionarTarefa">
+               <div class="text-danger"></div>
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input type="text" asp-for="Nome" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Criar</button>
+                </div>
+           </form>
+        </strong>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Voltar</a>
+</div>
