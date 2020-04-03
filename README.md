@@ -28,7 +28,7 @@
 
 ###### DBeaver - 
 
-######No DBeaver criar uma novo conexao do tipo SQL Server
+###### No DBeaver criar uma novo conexao do tipo SQL Server
 
 ###### Usuario: SA
 ###### Senha: senha definida na linha de comando do Docker (exemplo acima esta como SqlToDo@)
